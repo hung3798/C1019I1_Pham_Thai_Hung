@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="thang">
+<button onclick="tinhSoNgay()">Tinh So Ngay</button>
+<p id="ketqua"></p>
+<script>
+    function f() {
+        var thang = parseInt(document.getElementById("thang").value);
+        var ketqua = document.getElementById("ketqua");
+        switch (thang) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                ketqua.innerText = "thang co 31 ngay";
+                break;
+            case 2:
+                ketqua.innerText = "thang co 28.19 ngay";
+                break;
+            default:
+                ketqua.innerText = "thang co 30 ngay";
+        }
+    }
+
+</script>
+</body>
+</html>
