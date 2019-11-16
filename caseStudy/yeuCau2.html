@@ -36,7 +36,6 @@
                 + "loại phòng: " + typeRoom + "\n"
                 + "Số ngày thuê: " + rentDay + "\n"
                 + "giảm giá: " + discount + "\n"
-                + "thành tiền: " + totalPay + "$"
             );
             break;
         case "2":
@@ -52,7 +51,6 @@
                 + "9. loại phòng: " + typeRoom + "\n"
                 + "10. Số ngày thuê: " + rentDay + "\n"
                 + "11. giảm giá: " + discount + "\n"
-                + "12. thành tiền: " + totalPay + "$"
             );
             switch (chossEdit) {
                 case "1":
@@ -103,12 +101,10 @@
                 + "loại phòng: " + typeRoom + "\n"
                 + "Số ngày thuê: " + rentDay + "\n"
                 + "giảm giá: " + discount + "\n"
-                + "thành tiền: " + totalPay + "$"
             );
             break;
         case "3":
             let moneyPerday = 0;
-            let totalPay =0;
             if (typeSevice === "Villa") {
                 moneyPerday = 500
             }
@@ -158,7 +154,9 @@
             else if (typeCustomer==="Silver") {
                 disscountCondition += 2;
             }
-            totalPay = moneyPerday * rentDay * (1 - discount / 100)-disscountCondition;
+            let totalPays = moneyPerday * rentDay * (1 - discount/100);
+            totalPays = totalPays - disscountCondition;
+            alert("Money to pay after discountCondition: " + totalPays);
             break;
         default:
             alert("faled!!")

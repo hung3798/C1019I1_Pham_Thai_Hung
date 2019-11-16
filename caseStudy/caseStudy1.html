@@ -5,6 +5,31 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    let name = prompt("nhập tên khách hàng: ");
+    let IDcard = prompt("nhập số CMND: ");
+    let birthday = prompt("nhập ngày tháng năm sinh: ");
+    let email = prompt("nhập địa chỉ email: ");
+    let typeKH = prompt("nhập loai khách hàng: ");
+    let typeRent = prompt("nhập loại dịch vụ (villar,house, room): ");
+    let typeRoom = prompt("loại phòng: ");
+    let rentDay = parseInt(prompt("số ngày bạn muốn thuê: "));
+    let gift= "miễn phí hồ bơi, quần áo tắm biển,...";
+    let discount = parseFloat(prompt("số tiền dược giảm: "));
+    let totalPay = 500*rentDay*parseFloat(1-(discount/100));
+    alert(
+        "tên khách hàng: "+ name + "\n"
+        +"số CMND: "+ IDcard + "\n"
+        +"birthday: "+ birthday + "\n"
+        +"emmail: "+ email + "\n"
+        +"loại khách hàng: "+ typeKH + "\n"
+        +"loại dịch vụ: "+ typeRent + "\n"
+        +"loại phòng: "+ typeRoom + "\n"
+        +"Số ngày thuê: "+ rentDay + "\n"
+        +"dịch vụ đi kèm: "+ gift + "\n"
+        +"giảm giá: "+ discount + "\n"
+        +"thành tiền: "+ totalPay + "$"
+    )
+</script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let checkValiDate = false;
+    let emailCustomer;
+    do {
+        checkValiDate = true;
+        emailCustomer = prompt("nhap email: ");
+        let countDot = 0;
+        let countAt = 0;
+        for (let i = 0; i < emailCustomer.length; i++) {
+            if (emailCustomer.charAt(i) === "@") {
+                countAt++;
+            }
+            if (emailCustomer.charAt(i) === ".") {
+                countDot++;
+            }
+        }
+        if (counAt !== 1 || countDot < 1) {
+            checkValiDate = false;
+            alert("email khong dung!! vui long nhap lai")
+        }
+    } while (!checkValiDate);
+    alert("thong tin khach hang:"+ "\n"
+    +emailCustomer);
+
+
+
+</script>
+</body>
+</html>
