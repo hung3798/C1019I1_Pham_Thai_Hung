@@ -6,27 +6,35 @@
 </head>
 <body>
 <script>
-     let m = parseInt(prompt("nhập số lượng số nguyên tố : ",''));
-    hienThiMSongTo(m);
-    function hienThiMSongTo(m) {
-        let count=0 ; let i=2; let str = '';
-        while (count < m) {
-            if (isSoNguyenTo(i)) {
-                document.write(i + " ");
-                count ++;
+    let inputNum;
+    let flag = true;
+    do {
+        inputNum = prompt("Nhap mot so bat ki: ");
+        if (!isNaN(inputNum)) {
+            break;
+        } else {
+            alert("vui long nhap lai mot so nguyen duong")
+        }
+    }while (isNaN(inputNum));
+    function xetSNT(inputNum) {
+        if (inputNum < 2) {
+            flag = false;
+        }
+        else {
+            for (let i = 2; i < inputNum; i++) {
+                if (inputNum % i === 0) {
+                    flag = false;
+                }
             }
-            i++;
-            str += i;
+        }
+        if (flag===true) {
+            document.write(inputNum + " la SNT");
+        }else {
+            document.write(inputNum + " khong la SNT");
         }
     }
-    function isSoNguyenTo(so) {
-        for (let i = 2; i < so; i++) {
-            if (so % i === 0) {
-                return false;
-            }
-        }
-        return true;
-    }
+    xetSNT(inputNum);
+
 </script>
 </body>
 </html>

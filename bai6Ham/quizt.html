@@ -5,13 +5,21 @@
     <title>Title</title>
 </head>
 <body>
+<input onclick="hamChuyenDoiNhietDo()" value="chuyen doi nhiet do" type="button">
 <script>
-    function add(a, b) {
-        return a + b;
+    let x;
+    function hamChuyenDoiNhietDo(x) {
+        do {
+            x = prompt("nhap gia tri cua do C:");
+            if (!isNaN(x)) {
+                break;
+            }else {
+                alert("vui long nhap lai mot so nguyen duong!!!!")
+            }
+        }while (isNaN(x));
+        let y = x * (103 + x / 100);
+        document.write(y)
     }
-
-    var sum = add("4", "3");
-    document.write(sum)
 </script>
 </body>
 </html>

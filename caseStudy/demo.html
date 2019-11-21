@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let checkValidate = false;
+    // let emailCustomer;
+    // do {
+    //     emailCustomer = prompt("nhap email nguoi dung: ");
+    //     let countDot = 0;
+    //     let countAt = 0;
+    //     checkValidate = true;
+    //     for (let i = 0; i < emailCustomer.length; i++) {
+    //         if (emailCustomer.charAt(i) === "@") {
+    //             countAt++;
+    //         }
+    //         if (emailCustomer.charAt(i) === ".") {
+    //             countDot++;
+    //         }
+    //     }
+    //     if (countDot < 1 || countAt !== 1) {
+    //         checkValidate = false;
+    //         alert("email nhap sai vui long nhap lai!!!");
+    //     }
+    //
+    // } while (!checkValidate);
+    // alert("email customer: " + emailCustomer);
+    let checkValidate = false;
+    let birthdayCustomer;
+    do {
+        checkValidate=true;
+        birthdayCustomer = prompt("enter email Customer: ");
+        if (birthdayCustomer.charAt(2) !== "/" && birthdayCustomer.charAt(5) !== "/") {
+            checkValidate = false;
+            alert("birthday customer is valed, try again!!");
+        }
+    } while (!checkValidate);
+    alert("birthdaycustomer: "+ birthdayCustomer)
+</script>
+</body>
+</html>
