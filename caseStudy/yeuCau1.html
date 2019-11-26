@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nameCustomer = prompt("Enter Name Customer: ");
+    let idCard = prompt("Enter Type Customer: ");
+    let birthdayCustomer = prompt("Enter Birthday Customer: ");
+    let adressCustomer = prompt("Enter Adress Customer: ");
+    let emailCustomer = prompt("Enter Email Customer: ");
+    let numberCustomer = prompt("Enter Number Customer: ");
+    let typeSevice = prompt("Enter TypeSevice: ");
+    let typeRoom = prompt("Enter TypeRoom: ");
+    let typeCustomer = prompt("Enter Type Customer: ");
+    let discount = prompt("Enter Discount: ");
+    let rentDay = prompt("Enter RentDay: ");
+    let totalPay = 500 * parseInt(rentDay) * (1 - parseFloat(discount) / 100);
+    alert("This is infomation of Customer: " + "\n"
+            + "Name Customer: " + nameCustomer +"\n"
+            + "IDcard Customer: " + idCard +"\n"
+            + "Enter Birthday Customer: " + birthdayCustomer +"\n"
+            + "Adress Customer: " + adressCustomer +"\n"
+            + "Email Customer: " + emailCustomer +"\n"
+            + "Number Customer: " + numberCustomer +"\n"
+            + "TypeSevice: " + typeSevice +"\n"
+            + "Type Room: " + typeRoom +"\n"
+            + "Type Customer: " + typeCustomer +"\n"
+            + "Discount: " + discount +"\n"
+            + "RentDay: " + rentDay +"\n"
+            + "Total Pay: " + totalPay
+    )
+</script>
+</body>
+</html>

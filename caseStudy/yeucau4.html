@@ -5,6 +5,113 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    let arrayNameCustomer = [];
+    let chosse = prompt("1. Add new customer." + "\n"+
+        "2. Deleted customer."
+    )
+    switch (chosse) {
+        case "1":
+        let arrLenght = prompt("how many Customer you want to add ?");
+            for (let i = 0; i < arrLenght; i++) {
+                arrayNameCustomer.push(prompt("Name customer "+ (i+1)+":"))
+            }
+            arrayNameCustomer.sort();
+            let countName = "";
+            for (let i = 0; i < arrayNameCustomer.length; i++) {
+                countName += "\n" + (i + 1) + ". " + arrayNameCustomer[i];
+            }
+            alert(countName);
+            break;
+        case "2":
+            arrayNameCustomer[0] = "Hung";
+            arrayNameCustomer[1] = "Nam";
+            arrayNameCustomer[2] = "Huan";
+            arrayNameCustomer[3] = "Quan";
+            arrayNameCustomer[4] = "Son";
+            arrayNameCustomer[5] = "Manh";
+            arrayNameCustomer[6] = "Tuan";
+            arrayNameCustomer[7] = "Vy";
+            arrayNameCustomer[8] = "Quan";
+            arrayNameCustomer[9] = "chinh";
+            let countName2 = "";
+            for (let i = 0; i < arrayNameCustomer.length; i++) {
+                countName2 += "\n" + (i + 1) + ". " + arrayNameCustomer[i];
+            }
+            let indexDeleted = prompt("Chosse Customer you want to deleted:" + countName2);
+            arrayNameCustomer.splice(parseInt(indexDeleted) - 1, 1);
+            let afterDeleted = "";
+            for (let i = 0; i < arrayNameCustomer.length; i++) {
+                afterDeleted += "\n" + (i + 1) + ". " + arrayNameCustomer[i];
+            }
+            alert("Menu Customer after deleted:" + afterDeleted);
 
+            break;
+        default:
+            alert("faled!!");
+        break;
+    }
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

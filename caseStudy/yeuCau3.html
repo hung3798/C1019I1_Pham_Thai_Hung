@@ -6,31 +6,112 @@
 </head>
 <body>
 <script>
-    let checkValiDate = false;
-    let emailCustomer;
-    do {
-        checkValiDate = true;
-        emailCustomer = prompt("nhap email: ");
-        let countDot = 0;
-        let countAt = 0;
-        for (let i = 0; i < emailCustomer.length; i++) {
-            if (emailCustomer.charAt(i) === "@") {
-                countAt++;
-            }
-            if (emailCustomer.charAt(i) === ".") {
-                countDot++;
-            }
-        }
-        if (countAt !== 1 || countDot < 1) {
-            checkValiDate = false;
-            alert("email khong dung!! vui long nhap lai")
-        }
-    } while (!checkValiDate);
-    alert("thong tin khach hang:"+ "\n"
-    +emailCustomer);
+    let nameCustomer = "Pham Thai Hung";
+    let idCard = "187606512";
+    let birthdayCustomer = "05/02/1998";
+    let adressCustomer = "Da Nang";
+    let emailCustomer = "tamnguyen3798@gmail.com";
+    let numberCustomer = "2";
+    let typeSevice = "Villar";
+    let typeRoom = "Vip";
+    let typeCustomer = "silver";
+    let discount = 10;
+    let rentDay = 10;
+    let fLag = true;
+    let chosse = prompt("1. Show all infomation Customer." + "\n"
+        + "2. Edit information Customer." + "\n"
+        + "3. Show totalpay after discoutcondition");
+    switch (chosse) {
+        case "1":
+            alert("This is infomation of Customer: " + "\n"
+                + "Name Customer: " + nameCustomer +"\n"
+                + "IDcard Customer: " + idCard +"\n"
+                + "Enter Birthday Customer: " + birthdayCustomer +"\n"
+                + "Adress Customer: " + adressCustomer +"\n"
+                + "Email Customer: " + emailCustomer +"\n"
+                + "Number Customer: " + numberCustomer +"\n"
+                + "TypeSevice: " + typeSevice +"\n"
+                + "Type Room: " + typeRoom +"\n"
+                + "Type Customer: " + typeCustomer +"\n"
+                + "Discount: " + discount +"\n"
+                + "RentDay: " + rentDay);
+            break;
+        case "2":
+            // nameCustomer = prompt("New Name: ");
+            let regName = /^[A-Z][a-z]{1,6}(\s[A-Z][a-z]{1,6})*$/;
+            do {
+                nameCustomer = prompt("Enter new Name Customer: ");
+                if (regName.test(nameCustomer)) {
+                    break;
+                }else {
+                    alert("vui long nhap lai ten")
+                }
+            } while (!regName.test(nameCustomer));
+            // birthdayCustomer = prompt("New birthday: ");
+            let regBirthday = /^((0|[1-2])[0-9]|3[0-1])\/(0[1-9]|1[1-2])\/(199[0-9]|20(0[0-9]|1[0-5]))$/;
+            do {
+                nameCustomer = prompt("Enter new birthday Customer: ");
+                if (regBirthday.test(nameCustomer)) {
+                    break;
+                }else {
+                    alert("vui long nhap lai dd/mm/yyyy")
+                }
+            } while (!regName.test(nameCustomer));
+            do {
+                idCard = parseInt(prompt("New Idcard:"));
+                if (idCard >= 10000000 && idCard <= 99999999) {
+                    fLag = false;
+                    break;
+                } else {
+                    fLag = true;
+                    alert("vui long nhap lai Idcard");
+                }
+            }while (fLag = true);
+            // adressCustomer = prompt("New Adress: ");
+            let regAdress = /^[A-Z][a-z]{1,6}(\s[A-Z][a-z]{1,6})*$/;
+            do {
+                adressCustomer = prompt("Enter new adress Customer: ");
+                if (regAdress.test(adressCustomer)) {
+                    break;
+                }else {
+                    alert("vui long nhap lai ")
+                }
+            } while (!regAdress.test(adressCustomer));
+            // typeCustomer = prompt("New type Customer: ");
 
+            typeSevice = prompt("New type Svice: ");
+            typeRoom = prompt("New type room: ");
+            rentDay = prompt("New rent day: ");
+            discount = prompt("New discount: ");
+            numberCustomer = prompt("New Number Customer: ");
+         case "3":
+             let discountCondition = 0 ;
+             if (adressCustomer === "Da Nang"){
+                 discountCondition += 15;
+             }
+             if (adressCustomer === "Hue"){
+                 discountCondition += 10;
+             }
+             if (adressCustomer === "Quang Nam"){
+                 discountCondition += 5;
+             }
+             let totalPay = 500 * rentDay * (1 - discount / 100) - discountCondition;
+            alert("This is  new infomation of Customer: " + "\n"
+                + "Name Customer: " + nameCustomer +"\n"
+                + "IDcard Customer: " + idCard +"\n"
+                + "Enter Birthday Customer: " + birthdayCustomer +"\n"
+                + "Adress Customer: " + adressCustomer +"\n"
+                + "Email Customer: " + emailCustomer +"\n"
+                + "Number Customer: " + numberCustomer +"\n"
+                + "TypeSevice: " + typeSevice +"\n"
+                + "Type Room: " + typeRoom +"\n"
+                + "Type Customer: " + typeCustomer +"\n"
+                + "Discount: " + discount +"\n"
+                + "RentDay: " + rentDay +"\n"
+                + "Total Pay after Discount condition: " + totalPay
+            );
 
-
+    }
 </script>
 </body>
 </html>

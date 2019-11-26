@@ -6,12 +6,41 @@
 </head>
 <body>
 <script>
-    let inputNum;
-    let lag = true;
-    do {
-        inputNum = prompt("nhap ")
-    }while ()
-
+    let CongTac = function () {
+        this.setTrangThai = function (trangThai) {
+            this.trangThai = trangThai;
+        }
+        this.getTrangThai = function () {
+            return this.trangThai;
+        }
+        this.bat = function () {
+            this.setTrangThai(true)
+        }
+        this.tat = function () {
+            this.setTrangThai(false);
+        }
+    }
+    let bongDen = function () {
+        this.setTrangThai = function () {
+            this.trangThai = trangThai;
+            this.getTrangThai = function () {
+                return this.trangThai
+            };
+            this.batDen = function () {
+                this.trangThai(true);
+            };
+            this.tatDen = function () {
+                this.trangThai(false)
+            }
+        };
+    };
+    this.ketNoi = function () {
+        if (this.trangThai === true) {
+            bongDen.batDen();
+        } else {
+            bongDen.tatDen();
+        }
+    }
 </script>
 </body>
 </html>

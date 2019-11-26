@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<button onclick="chochoan()">cho cho an</button>
 <script>
     // let checkValidate = false;
     // let emailCustomer;
@@ -28,17 +29,64 @@
     //
     // } while (!checkValidate);
     // alert("email customer: " + emailCustomer);
-    let checkValidate = false;
-    let birthdayCustomer;
-    do {
-        checkValidate=true;
-        birthdayCustomer = prompt("enter email Customer: ");
-        if (birthdayCustomer.charAt(2) !== "/" && birthdayCustomer.charAt(5) !== "/") {
-            checkValidate = false;
-            alert("birthday customer is valed, try again!!");
+    // let fLag = true;
+    // let idCard;
+    // do {
+    //     idCard = parseInt(prompt("New Idcard:"));
+    //     if (idCard >= 10000000 && idCard <= 99999999) {
+    //         fLag = false;
+    //         break;
+    //     } else {
+    //         fLag = true;
+    //     alert("vui long nhap lai Idcard");
+    //     }
+    // }while (fLag = true);
+    // let regBirthday = /^(0|[1-3])$/;
+    // do {
+    //     nameCustomer = prompt("Enter new Name Customer: ");
+    //     if (reg.test(nameCustomer)) {
+    //         break;
+    //     }else {
+    //         alert("vui long nhap lai ten")
+    //     }
+    // } while (!regName.test(nameCustomer));
+    // let typeMember = prompt("nhap loai member: ");
+    // let flag = true;
+    // do {
+    //     switch (typeMember) {
+    //         case "silver":
+    //             alert("Hello Silver member you got 5$ for discout condition");
+    //             flag =true;
+    //             break;
+    //         case "gold":
+    //             alert("Hello gold member you got 10$ for discout condition");
+    //             flag =true;
+    //             break;
+    //         default:
+    //             typeMember = prompt("nhap lai");
+    //             flag = false
+    //     }
+    // } while (!flag)
+    var myDog = {
+        weight: 5,
+        name: "Dan",
+        age: 2,
+        bark: function () {
+            console.log("gau gau!")
+        },
+        eat: function (bone) {
+            this.weight = this.weight + bone.weight;
+            return this;
         }
-    } while (!checkValidate);
-    alert("birthdaycustomer: "+ birthdayCustomer)
+    }
+    var bone = {
+        weight: 0.5
+    };
+    function chochoan() {
+        myDog.eat(bone);
+        console.log("after eating my Dog weight: ", myDog.weight)
+    }
+
 </script>
 </body>
 </html>
