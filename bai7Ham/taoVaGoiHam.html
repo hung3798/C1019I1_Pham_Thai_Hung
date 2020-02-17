@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function prosessAnswer(answer) {
+        let resoul = "";
+        if (answer) {
+            resoul = "chao mung ban den voi chung toi";
+        } else {
+            resoul = "tam biet";
+        }
+        return resoul;
+    }
+
+    let answer = confirm("ban co muon choi game khong");
+    let hienThi = prosessAnswer(answer)
+    alert(hienThi);
+</script>
+</body>
+</html>

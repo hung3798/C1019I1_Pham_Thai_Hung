@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<script>
+    let HinhChuNhat = function (chieuDai,chieuRong) {
+        this.chieuDai = chieuDai;
+        this.chieuRong = chieuRong;
+        this.getDienTich = function () {
+            return chieuDai * chieuRong;
+        };
+        this.getChuVi = function () {
+            return (chieuDai + chieuRong) * 2
+        };
+        this.veCanvas = function () {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#170aff";
+            ctx.fillRect(0,0,this.chieuDai,this.chieuRong);
+        }
+    };
+    let hinhChuNhat1 = new HinhChuNhat(prompt("Nhap Chieu Dai: "), prompt("Nhap chieu rong: "));
+    hinhChuNhat1.veCanvas();
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemTraSnt(number) {
+        if (number < 2) {
+            return false;
+        } else {
+            for (let i = 2; i < number; i++) {
+                if (number % i === 0) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        }
+
+    }
+
+    let flag = prompt("nhap 1 so nguyen duong: ");
+    if (kiemTraSnt(flag)) {
+        alert("so vua nhap la so nguyen to");
+    } else {
+        alert("so vua nhap khong phai so nguyen to");
+    }
+</script>
+</body>
+</html>

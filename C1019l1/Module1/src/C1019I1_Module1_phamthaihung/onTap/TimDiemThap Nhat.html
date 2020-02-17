@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrScore = [];
+    function inputScore(number) {
+        for (let i = 0; i < number; i++) {
+            let c = parseInt(prompt("Input number at index " + (i + 1)));
+            arrScore.push(c);
+        }
+    }
+    function findMinScore() {
+        let min = arrScore[0];
+        for (let i = 0; i < arrScore.length; i++) {
+            if (min > arrScore[i]) {
+                min = arrScore[i];
+            }
+        }
+        alert("Min Score is: " + min);
+    }
+
+    findMinScore(inputScore(parseInt(prompt("nhap so luong trong bang diem"))));
+</script>
+</body>
+</html>

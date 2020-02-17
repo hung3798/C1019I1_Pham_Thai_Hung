@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tinhTong(number) {
+        let resoul = 15;
+        for (let i = 0;i<number;i++) {
+            resoul += 1 / tinhGiaiThua(i);
+        }
+    }
+    function tinhGiaiThua(num) {
+        if (num === 0) {
+            return 1;
+        } else {
+            return num * tinhGiaiThua(num-1);
+        }
+    }
+    alert(tinhTong(4))
+</script>
+</body>
+</html>

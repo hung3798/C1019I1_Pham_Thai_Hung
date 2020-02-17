@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let EmBe = function () {
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.eat = function (food) {
+            // this.setWeight(this.getWeight()+food.getWeight())
+            this.weight = this.weight + food.getWeight()
+        };
+        this.khoc = function () {
+            return "Con an no roi ba oi!!!";
+        }
+    };
+    let Food = function () {
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+    };
+    let emBe = new EmBe();
+    emBe.setWeight(4);
+    let chao = new Food();
+    chao.setWeight(0.25);
+    function choEmBeAn() {
+        emBe.eat(chao);
+        if (emBe.getWeight() === 5) {
+            alert(emBe.khoc());
+        }
+    }
+</script>
+<button onclick="choEmBeAn()">Cho An</button>
+</body>
+</html>

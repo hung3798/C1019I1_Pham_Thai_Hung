@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="NhanVien.js"></script>
+<script>
+    let nhanVien = new NhanVien();
+    nhanVien.setName("nguyen van A");
+    nhanVien.setDay(20);
+    nhanVien.setSalaryDay(200000);
+    alert ("ten nhan vien: " + nhanVien.getName()+"\n"+
+            "so ngay lam viec: " + nhanVien.getDay() +"\n"+
+            "So luong nhan duoc/Ngay: "+ nhanVien.getSalaryDay()+"\n"+
+            "So luong nhan duoc trong thang la: " + nhanVien.getSalary()
+    );
+</script>
+</body>
+</html>

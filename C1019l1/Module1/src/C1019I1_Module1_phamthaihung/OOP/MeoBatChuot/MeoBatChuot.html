@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Chuot = function () {
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getName = function () {
+            return this.name;
+        };
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.setSpeed = function (speed) {
+            this.speed = speed;
+        };
+        this.getSpeed = function () {
+          return this.speed;  
+        };
+        this.setLife = function (isLife) {
+            this.isLife = isLife;
+        };
+        this.getLife = function () {
+            return this.isLife;
+        };
+        this.bark = function () {
+            alert("chut chit chut chit! My name is " + this.getName());
+        };
+    };
+    let Meo = function () {
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getName = function () {
+            return this.name;
+        };
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.setSpeed = function (speed) {
+            this.speed = speed;
+        };
+        this.getSpeed = function () {
+            return this.speed;
+        };
+        this.bark = function () {
+            alert("Meo Meo Meo Meo! My name is " + this.getName());
+        };
+        this.takeMouse = function () {
+            if (mouse.getLife()) {
+                if (this.getSpeed() > mouse.getSpeed()) {
+                    this.eatMouse();
+                } else {
+                    alert("Meo oi cham qua");
+                }
+            } else {
+                alert("Meo khong an chuot chet");
+            }
+            };
+        this.eatMouse = function () {
+            this.weight = this.weight + mouse.getWeight();
+        }
+    };
+    let mouse = new Chuot();
+    mouse.setName("Mickey");
+    mouse.setWeight(0.5);
+    mouse.setSpeed(20);
+    mouse.setLife(false);
+    let meo = new Meo();
+    meo.setName("Tom");
+    meo.setWeight(5);
+    meo.setSpeed(15);
+    meo.takeMouse();
+    mouse.bark();
+    meo.bark();
+    document.write(meo.getWeight())
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Human = function () {
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getName = function () {
+            return this.name;
+        };
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.eat = function (food) {
+            this.weight = this.getWeight() + food.getWeight();
+        };
+    };
+    let Apple = function () {
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getName = function () {
+            return this.name;
+        };
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+    };
+    let taoMy = new Apple();
+    let adam = new Human();
+    taoMy.setName("Ming");
+    taoMy.setWeight(10);
+    adam.setWeight(180);
+    adam.setName("Hai");
+    adam.eat(taoMy);
+    alert("sau khi an tao anh ta co khoi luong: " + adam.getWeight());
+</script>
+</body>
+</html>

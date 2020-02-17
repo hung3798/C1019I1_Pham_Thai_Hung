@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="nhanVien.js"></script>
+<script>
+    let nhanVien = new NhanVien();
+    let hocSinh = new HocSinh();
+    hocSinh.setDiem(10);
+    nhanVien.setSalaryDay(200000);
+    nhanVien.setName("Nguyen Van A");
+    nhanVien.setDay(25);
+    alert("hoc sinh gioi: "+ hocSinh.getDiem() + hocSinh.getDayStudy());
+    alert("Ten nhan vien: " + nhanVien.getName() + "\n" +
+        "So Ngay Di Lam: " + nhanVien.getDay() + "\n" +
+        "luong nhan duoc: " + nhanVien.getSalary()
+    );
+</script>
+</body>
+</html>

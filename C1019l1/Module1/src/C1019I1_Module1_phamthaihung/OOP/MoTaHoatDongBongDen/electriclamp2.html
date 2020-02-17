@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="turnOnLamp()">bat den</button>
+<button onclick="turnOffLamp()">tat den</button>
+<script>
+    let ElectricLamp = function () {
+        this.setStatus = function (status) {
+            this.status = status.getStatus();
+        };
+        this.getStatus = function () {
+            return this.status;
+        };
+        this.isOn = function () {
+            if (this.getStatus()) {
+                return "Lamp is lighting!!!";
+            } else {
+                return "Lamp isn't lighting!!!";
+            }
+        }
+    };
+    let SwitchButton = function () {
+        this.setStatus = function (status) {
+            this.status = status;
+        };
+        this.getStatus = function () {
+            return this.status;
+        };
+        this.onSwitch = function () {
+            this.status = true;
+        };
+        this.offSwitch = function () {
+            this.status = false;
+        }
+    };
+    let lamp1 = new ElectricLamp();
+    let button1 = new SwitchButton();
+    function turnOnLamp() {
+        button1.onSwitch();
+        lamp1.setStatus(button1);
+        alert(lamp1.isOn());
+    }
+    function turnOffLamp() {
+        button1.offSwitch();
+        lamp1.setStatus(button1);
+        alert (lamp1.isOn())
+    }
+</script>
+</body>
+</html>

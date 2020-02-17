@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function displayMainMenu() {
+        let chosse = prompt("1. Add new customer\n2. Display Information Customer\n3. Edit Customer\n 4. Exit");
+        switch (chosse) {
+            case "1":
+                addNewCustomer();
+                break;
+            case "2":
+                displayCustomer();
+                break;
+
+            case "3":
+                editCustomer();
+            case "4":
+                alert("Good Bye!");
+                break;
+            default:
+                displayMainMenu();
+        }
+    }
+
+    let arrCustomer = [];
+    function addNewCustomer() {
+        let arrInfo = [];
+        let nameCustomer = prompt("Enter name customer:");
+        let idCard = prompt("Enter Idcard: ");
+        let birthdayCustomer = prompt("Enter birthday customer: ");
+        let emailCustomer = prompt("Enter Email Customer: ");
+        arrInfo.push(nameCustomer, idCard, birthdayCustomer, emailCustomer);
+        arrCustomer.push(arrInfo)
+        displayMainMenu();
+    }
+    function displayCustomer() {
+        // alert("Infomation Customer:\n" +
+        //     "Name Customer: " + nameCustomer + "\n" +
+        //     "Idcard Customer: " + idCard + "\n" +
+        //     "Birthday Customer: " + birthday + "\n" +
+        //     "Email Customer: " + emailCustomer + "\n");
+        alert(arrCustomer);
+        displayMainMenu();
+
+    }
+    displayMainMenu();
+</script>
+</body>
+</html>

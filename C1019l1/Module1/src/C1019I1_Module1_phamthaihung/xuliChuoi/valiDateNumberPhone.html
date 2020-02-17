@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function valiDateNumberPhone() {
+        let regex = /^\d{10}$/;
+        let numberPhone = prompt("Enter Numberphone: ");
+        if (regex.test(numberPhone)) {
+            alert("Numberphone: " + numberPhone);
+        } else {
+            alert("Numberphone not fault!!");
+            valiDateNumberPhone();
+        }
+    }
+    valiDateNumberPhone();
+</script>
+</body>
+</html>

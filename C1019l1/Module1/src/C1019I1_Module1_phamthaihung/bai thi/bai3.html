@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrScore = [];
+    function inputScore(number) {
+        for (let i = 0; i < number; i++) {
+            let c = parseInt(prompt("Input number at index " + (i + 1)));
+            arrScore.push(c);
+        }
+    }
+    function findMaxScore() {
+        let max = arrScore[0];
+        let count = -1;
+        let index;
+        for (let i = 0; i < arrScore.length; i++) {
+            count++;
+            if (max < arrScore[i]) {
+                max = arrScore[i];
+                index = count;
+            }
+        }
+        alert("Max Score is: " + max + " at index: " + index);
+    }
+
+    findMaxScore(inputScore(parseInt(prompt("nhap so luong trong bang diem"))));
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="hienthi()">cho an</button>
+<p id="hienthi"></p>
+<script>
+    let dog = {
+        name: "mickey",
+        weight: 2.5,
+        eating: function () {
+            this.weight = this.weight + bond.weight;
+        }
+    };
+    let bond = {
+        weight: 0.25
+    };
+    function choAn() {
+        dog.eating();
+        khoiLuong = dog.weight;
+        return khoiLuong;
+    }
+    // dog.eating();
+    // dog.eating();
+    // dog.eating();
+    // dog.eating();
+    // document.write(dog.weight);
+    function hienthi() {
+        choAn();
+        document.getElementById("hienthi").innerHTML = dog.weight;
+    }
+</script>
+</body>
+</html>

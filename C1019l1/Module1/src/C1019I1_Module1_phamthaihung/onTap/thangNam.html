@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function hienThiNgay(thang,nam) {
+        if (tinhNamNhuan(nam)) {
+            switch (thang) {
+                case 1:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 2:
+                    alert("thang nay co 29 ngay.");
+                    break;
+                case 3:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 4:
+                    alert("thang nay co 30 ngay.");
+                    break;
+                case 5:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 6:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 7:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 8:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 9:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 10:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 11:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 12:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                default:
+                    alert("khong co thang " + thang);
+                    hienThiNgay();
+            }
+        } else {
+            switch (thang) {
+                case 1:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 2:
+                    alert("thang nay co 28 ngay.");
+                    break;
+                case 3:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 4:
+                    alert("thang nay co 30 ngay.");
+                    break;
+                case 5:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 6:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 7:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 8:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 9:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 10:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 11:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                case 12:
+                    alert("thang nay co 31 ngay.");
+                    break;
+                default:
+                    alert("khong co thang " + thang);
+                    hienThiNgay();
+            }
+        }
+
+        function tinhNamNhuan(nam) {
+            if (nam % 4 === 0) {
+                if (nam % 100 === 0) {
+                    if (nam % 400 === 0) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
+    }
+
+    hienThiNgay(parseInt(prompt("nhap thang:")), parseInt(prompt("nhap nam:")));
+</script>
+</body>
+</html>

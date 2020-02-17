@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputNum;
+    do {
+        inputNum = prompt("nhap mot so 1->100");
+        // ở trong vòng lặp do while hành động sẽ được thực hiện cho đến khi biểu thức trong while sai
+        //ở đây inputNum < 1 hoặc là inputNum >100 while sẽ xét trả về đúng nên sẽ lặp cho đến khi bạn
+        //nhập số trong vòng 1-100 sẽ không lặp nữa và thoát ra để alert inputNum
+    } while (inputNum < 1 || inputNum > 100);
+    alert("so vua nhap la: " + inputNum);
+</script>
+</body>
+</html>

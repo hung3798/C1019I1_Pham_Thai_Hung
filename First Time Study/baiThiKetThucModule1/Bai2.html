@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isNumber(number) {
+        let regex = /^\d{4}$/;
+        if (regex.test(number)) {
+            let a = parseInt(number.charAt(0));
+            let b = parseInt(number.charAt(1));
+            let c = parseInt(number.charAt(2));
+            let d = parseInt(number.charAt(3));
+            if ((a + b) === (c - d)) {
+                alert("true!");
+            } else {
+                alert("false!")
+            }
+        } else {
+            alert("vui long nhap so co 4 chu so!!!");
+            isNumber(prompt("nhap lai: "));
+        }
+        isNumber(prompt("Thu mot so khac: "));
+    }
+
+    isNumber(prompt("nhap so co 4 chu so"));
+</script>
+</body>
+</html>

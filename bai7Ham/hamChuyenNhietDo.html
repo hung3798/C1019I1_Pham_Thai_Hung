@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="inputDoF">
+<button onclick="convertNhietDo()">chuyen doi</button>
+<p id="hienthi"></p>
+<script>
+    function convertNhietDo(inputNum) {
+        inputNum = document.getElementById("inputDoF").value;
+        let doC = (inputNum - 32) / 18;
+        hienthi.innerText = doC;
+    }
+</script>
+</body>
+</html>

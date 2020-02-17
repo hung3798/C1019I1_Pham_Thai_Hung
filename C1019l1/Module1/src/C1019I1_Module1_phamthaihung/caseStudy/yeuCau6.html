@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function displayMainMenu() {
+        let chosse = prompt("1. Add New Customer" +
+            "\n2. Display Information Customer" +
+            "\n3. Edit Information Customer" +
+            "\n4. Delete Customer" +
+            "\n5. Total pay customer." +
+            "\n6. Exit");
+        switch (chosse) {
+            case "1":
+                addNewCustomer();
+                break;
+            case "2":
+                displayInfo();
+                break;
+            case "3":
+                editInfo();
+                break;
+            case "4":
+                deleteCustomer();
+                break;
+            case "5":
+                showTotalPay();
+                break;
+            case "6":
+                break;
+            default:
+                displayMainMenu();
+        }
+    }
+    let Customer = function () {
+        this.setName = function (name) {
+            this.name = name
+        };
+        this.getName = function () {
+            return this.name;
+        };
+        this.setBirthday = function (birthday) {
+            this.birthday = birthday
+        };
+        this.getBirthday = function () {
+            return this.birthday;
+        };
+        this.setIdCard = function (idCard) {
+            this.idCard = idCard
+        };
+        this.getIdCard = function () {
+            return this.idCard;
+        };
+        this.setEmail = function (email) {
+            this.email = email
+        };
+        this.getEmail = function () {
+            return this.email;
+        };
+        this.setAddress = function (address) {
+            this.address = address;
+        };
+        this.getAddress = function () {
+            return this.address;
+        };
+        this.setTypeCustomer = function (typeCustomer) {
+            this.typeCustomer = typeCustomer;
+        };
+        this.getTypeCustomer = function () {
+            return this.typeCustomer;
+        };
+        this.setDiscount = function (discount) {
+            this.discount = discount
+        };
+        this.getDiscount = function () {
+            return this.discount;
+        };
+        this.setAmount = function (amount) {
+            this.amount = amount;
+        };
+        this.getAmount = function () {
+            return this.amount;
+        };
+        this.setRentDay = function (rentDay) {
+            this.rentDay = rentDay
+        };
+        this.getRentDay = function () {
+            return this.rentDay;
+        };
+        this.setTypeRoom = function (typeRoom) {
+            this.typeRoom = typeRoom
+        };
+        this.getTypeRoom = function () {
+            if (this.typeRoom === "Villa") {
+                return 500;
+            } else if (this.typeRoom === "House") {
+                return 300;
+            } else if (this.typeRoom === "Room") {
+                return 100;
+            }
+        };
+        this.getTotalPay = function () {
+            return this.getTypeRoom() * this.getRentDay() * (1 - this.getDiscount() / 100);
+        };
+    };
+    let arrayListCustomer = [];
+    function addNewCustomer() {
+        let newCustomer = new Customer();
+        newCustomer.setName(prompt("Enter name customer"));
+        newCustomer.setBirthday(prompt("Enter birthday customer"));
+        newCustomer.setIdCard(prompt("Enter idcard customer"));
+        newCustomer.setEmail(prompt("Enter email customer"));
+        newCustomer.setAddress(prompt("Enter address"));
+        newCustomer.setTypeCustomer("Enter type customer");
+        newCustomer.setDiscount(prompt("Enter discount"));
+        newCustomer.setAmount(prompt("Enter amount person"));
+        newCustomer.setRentDay(prompt("Enter rentday"));
+        newCustomer.setTypeRoom(prompt("Enter type room"));
+        arrayListCustomer.push(newCustomer);
+        displayMainMenu();
+    }
+    function displayInfo() {
+        let resoul = "";
+        for (let i = 0; i < arrayListCustomer.length; i++) {
+            resoul += (i + 1) + ": " + arrayListCustomer[i].getName() + "\n";
+        }
+        let chosse = prompt("Select customer you want to show:\n" +
+            resoul + (arrayListCustomer.length + 1) + ". Exit");
+        switch (chosse) {
+            case (arrayListCustomer.length + 1) + "":
+                displayMainMenu();
+                break;
+            default:
+                showInfomationCustomer(chosse - 1);
+                displayMainMenu();
+        }
+    }
+    function showInfomationCustomer(i) {
+        if (i < arrayListCustomer.length) {
+            alert("Name Customer: " + arrayListCustomer[i].getName() + "\n" +
+                "Id card: " + arrayListCustomer[i].getIdCard() + "\n" +
+                "Birthday Customer: " + arrayListCustomer[i].getBirthday() + "\n" +
+                "Email Customer: " + arrayListCustomer[i].getEmail() + "\n" +
+                "Address Customer: " + arrayListCustomer[i].getAddress() + "\n" +
+                "Type Customer: " + arrayListCustomer[i].getTypeCustomer() + "\n" +
+                "Discount: " + arrayListCustomer[i].getDiscount() + "\n" +
+                "Number Of Accompanying: " + arrayListCustomer[i].getAmount() + "\n" +
+                "Type Room: " + arrayListCustomer[i].getTypeRoom() + "\n" +
+                "Rent Day: " + arrayListCustomer[i].getRentDay()
+            );
+            displayMainMenu();
+        } else {
+            alert("Customer at " + (i + 1) + " invalid");
+            displayInfo();
+        }
+    }
+    function editInfo() {
+        let resoul = "";
+        for (let i = 0; i < arrayListCustomer.length; i++) {
+            resoul += (i + 1) + ". " + arrayListCustomer[i].getName() + "\n";
+        }
+        let chosse = prompt("Chosse Customer you want to edit:\n" +
+            resoul + (arrayListCustomer.length + 1) + ". Back");
+        switch (chosse) {
+            case (arrayListCustomer.length + 1) + "":
+                displayMainMenu();
+                break;
+            default:
+                editInformationCustomer(chosse-1);
+        }
+    }
+    function editInformationCustomer(i) {
+        if (i < arrayListCustomer.length) {
+            arrayListCustomer[i].setName(prompt("Enter name"));
+            arrayListCustomer[i].setBirthday(prompt("Enter birthday customer"));
+            arrayListCustomer[i].setIdCard(prompt("Enter idcard customer"));
+            arrayListCustomer[i].setEmail(prompt("Enter email customer"));
+            arrayListCustomer[i].setAddress(prompt("Enter address"));
+            arrayListCustomer[i].setTypeCustomer("Enter type customer");
+            arrayListCustomer[i].setDiscount(prompt("Enter discount"));
+            arrayListCustomer[i].setAmount(prompt("Enter amount person"));
+            arrayListCustomer[i].setRentDay(prompt("Enter rentday"));
+            arrayListCustomer[i].setTypeRoom(prompt("Enter type room"));
+            displayMainMenu();
+        } else {
+            alert("Customer at " + (i + 1) + " invalid");
+            editInfo();
+        }
+    }
+    function deleteCustomer() {
+        let resoul = "";
+        for (let i = 0; i < arrayListCustomer.length; i++) {
+            resoul += (i + 1) + ". " + arrayListCustomer[i].getName() + "\n";
+        }
+        let chosse = prompt("Chosse Customer you want to edit:\n" + resoul + (arrayListCustomer.length + 1) + ". Back");
+        switch (chosse) {
+            case (arrayListCustomer.length + 1) + "":
+                displayMainMenu();
+                break;
+            default:
+                deleteInfo(chosse - 1);
+        }
+    }
+    function deleteInfo(i) {
+        if (i < arrayListCustomer.length) {
+            arrayListCustomer.splice(i, 1);
+            displayMainMenu();
+        } else {
+            alert("Customer at " + (i + 1) + " invalid");
+            deleteCustomer();
+        }
+    }
+    function showTotalPay() {
+        let resoul = "";
+        for (let i = 0; i < arrayListCustomer.length; i++) {
+            resoul += (i + 1) + "1. " + arrayListCustomer[i].getName() + "\n";
+        }
+        let chosse = prompt("Chosse Customer you want to pay\n" +
+            resoul + (arrayListCustomer.length + 1) + ". Back");
+        switch (chosse) {
+            case (arrayListCustomer.length + 1) + "":
+                displayMainMenu();
+                break;
+            default:
+                totalPay(chosse - 1);
+        }
+    }
+    function totalPay(i) {
+        if (i < arrayListCustomer.length) {
+            alert(arrayListCustomer[i].getTotalPay());
+            displayMainMenu();
+        } else {
+            alert("Customer at " + (i + 1) + " invalid");
+            showTotalPay();
+        }
+    }
+    displayMainMenu();
+</script>
+</body>
+</html>

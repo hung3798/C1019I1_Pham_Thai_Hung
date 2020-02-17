@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    for (let i = 0; i < 5; i++) {
+        let c = prompt("Nhap mot so nguyen");
+        array.push(c);
+    }
+    array.sort(function (a, b) {
+        return a - b;
+    });
+    alert(array)
+</script>
+</body>
+</html>

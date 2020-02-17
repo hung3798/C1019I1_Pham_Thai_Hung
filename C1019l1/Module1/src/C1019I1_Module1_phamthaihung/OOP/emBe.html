@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="choAn()">Cho em be an</button>
+<script>
+    let EmBe = function () {
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getName = function () {
+            return this.name;
+        };
+        this.setWeight = function (weight) {
+            this.weight = weight
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.eat = function (food) {
+            this.weight = this.getWeight() + food.getWeight();
+        };
+    };
+    let ThucAn = function (weight) {
+        this.weight = weight;
+        this.getWeight = function () {
+            return this.weight;
+        }
+    };
+    let nhi = new EmBe();
+    let chao = new ThucAn(0.25);
+    nhi.setName("Nhi");
+    nhi.setWeight(25);
+    function choAn() {
+        nhi.eat(chao);
+        if (nhi.getWeight() === 25.5) {
+            alert(nhi.getName() + " no roi, dung cho an nua");
+        } else {
+            alert("ban vua cho " + nhi.getName() + " an, bay gio can nang cua " + nhi.getName() + " la: " + nhi.getWeight());
+        }
+    }
+</script>
+</body>
+</html>

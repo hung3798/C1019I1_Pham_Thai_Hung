@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+nhập vào đơn vị muốn chuyển đổi: <input type="number" id="input">
+<button onclick="feetToMet()">Feet to Meet</button>
+<button onclick="metToFeet()">Meet to Feed</button><br>
+<p id="abc"></p>
+<script>
+    function metToFeet(meet) {
+        meet = document.getElementById("number");
+        let feet2 = meet*3.279
+        abc.innerText = feet2;
+
+    }
+    function feetToMet(feet) {
+        feet = document.getElementById("number");
+         let meet2 = 0.97*feet;
+        abc.innerText = meet2;
+    }
+
+</script>
+</body>
+</html>

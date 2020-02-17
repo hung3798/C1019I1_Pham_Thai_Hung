@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<button onclick="sangPhai()">phai</button>
+<button onclick="sangTrai()">trai</button>
+<button onclick="diLen()">xuong</button>
+<button onclick="diXuong()">len</button>
+<body>
+<canvas id="myCanvas" width="400" height="400"></canvas>
+<script>
+    let Circle = function () {
+        this.setWidth = function (width) {
+            this.width = width;
+        };
+        this.getWidth = function () {
+            return this.width;
+        };
+        this.setHeight = function (height) {
+            this.height = height;
+        };
+        this.getHeight = function () {
+            return this.height;
+        };
+        this.art = function () {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(this.getWidth(), this.getHeight(), 10, 0, 2 * Math.PI,true);
+            ctx.stroke();
+            ctx.fill();
+        };
+        this.art2 = function () {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(this.getWidth(), this.getHeight(), 10, 0, 2 * Math.PI,true);
+            ctx.stroke();
+            ctx.fillStyle = "#fffefd"; ;
+        }
+    };
+    let circle = new Circle();
+    circle.setHeight(100);
+    circle.setWidth(100);
+    circle.art();
+
+    function sangPhai() {
+        circle.art2();
+        circle.width = circle.getWidth() + 10;
+        circle.art();
+    }
+    function sangTrai() {
+        circle.art2();
+        circle.width = circle.getWidth() - 10;
+        circle.art();
+    }
+    function diLen() {
+        circle.art2();
+        circle.height = circle.getHeight() + 10;
+        circle.art();
+    }
+    function diXuong() {
+        circle.art2();
+        circle.height = circle.getHeight() - 10;
+        circle.art();
+    }
+</script>
+</body>
+</html>

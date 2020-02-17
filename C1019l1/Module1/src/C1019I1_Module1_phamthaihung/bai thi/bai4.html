@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let HocSinh = function () {
+        this.setStt = function (stt) {
+            this.stt = stt;
+        };
+        this.getStt = function () {
+            return this.stt;
+        };
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getName = function () {
+            return this.name;
+        };
+        this.setBirthday = function (birthday) {
+            this.birthday = birthday;
+        };
+        this.getBirthday = function () {
+            return this.birthday;
+        };
+        this.setDiemTb = function (diem) {
+            this.diem = diem;
+        };
+        this.getDiemTb = function () {
+            return this.diem;
+        };
+        this.showInfo = function () {
+            alert("So thu tu: " + this.getStt() + "\nTen hoc sinh: " + this.getName() + "\nNgay Sinh: " +
+                this.getBirthday() + "\nDiem trung binh: " + this.getDiemTb());
+        };
+        this.kiemTra = function () {
+            let hocLuc;
+            if (this.getDiemTb() < 10) {
+                hocLuc = "Hs gioi";
+                if (this.getDiemTb() < 8) {
+                    hocLuc = "Hs kha";
+                    if (this.getDiemTb() < 6.5) {
+                        hocLuc = "Hs trung binh";
+                        if (this.getDiemTb() < 5) {
+                            hocLuc = "Hs yeu";
+                            if (this.getDiemTb() < 3.5) {
+                                hocLuc = "Hs kem";
+                            }
+                        }
+                    }
+                }
+            }
+            return hocLuc;
+        }
+    };
+    let hocSinh = new HocSinh();
+    hocSinh.setStt(prompt("nhap so thu tu:"));
+    hocSinh.setName(prompt("nhap ten hoc sinh"));
+    hocSinh.setBirthday(prompt("nhap nam sinh"));
+    hocSinh.setDiemTb(parseFloat(prompt("nhap diem trung binh")));
+    alert(hocSinh.showInfo());
+    alert(hocSinh.kiemTra());
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    function inputArray(number,index) {
+        for (let i = 0; i < number; i++) {
+            let c = parseFloat(prompt("Input number to array"));
+            array.push(c);
+        }
+        if (index <= number) {
+            for (let i = 0; i < array.length; i++) {
+                if (i === (index - 1)) {
+                    array.splice(i, 1);
+                }
+            }
+            alert("mang sau khi duyet la: " + array);
+        } else {
+            alert("tham số đầu vào lỗi(lưu ý: number>index)");
+            inputArray(prompt("Number:"), prompt("Index"));
+        }
+    }
+
+    inputArray(prompt("Number:"), prompt("Index"));
+</script>
+</body>
+</html>

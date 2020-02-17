@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let arrCar = ["Toyota", "Mesedes", "Audi", "Huyndai", "Nissan"];
+    // let chosse = prompt("nhap ki tu ban muon tim xe: ");
+    // switch (chosse) {
+    //     case "T":
+    //         alert("xe ban can tim la: " + arrCar[0]);
+    //         break;
+    //     case "M":
+    //         alert("xe ban can tim la: " + arrCar[1]);
+    //         break;
+    //     case "A":
+    //         alert("xe ban can tim la: " + arrCar[2]);
+    //         break;
+    //     case "H":
+    //         alert("xe ban can tim la: " + arrCar[3]);
+    //         break;
+    //     case "N":
+    //         alert("xe ban can tim la: " + arrCar[4]);
+    //         break;
+    //     default:
+    //         alert("khong tim thay!!!");
+    // }
+    let arr = [31, 212, 312, 24, 14, 12, 312, 312, 3, 41, 31, 23, 12, 312, 412, 312, 312];
+    let input = prompt("nhap mot so: ");
+    for (let i = 0; i < arr.length; i++) {
+        if (input == arr[i]) {
+            let resoul = "";
+            resoul+="số" + input + "bạn vừa nhập có trong mảng. Vị trí: " + i;
+            alert(resoul);
+        }
+    }
+</script>
+</body>
+</html>

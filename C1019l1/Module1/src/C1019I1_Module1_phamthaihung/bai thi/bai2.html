@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isMainNumber(number) {
+        let b = Math.sqrt(number);
+        let c = parseInt(Math.sqrt(number));
+        if (b - c === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    alert(isMainNumber(parseInt(prompt("nhap so nguyen"))));
+</script>
+</body>
+</html>

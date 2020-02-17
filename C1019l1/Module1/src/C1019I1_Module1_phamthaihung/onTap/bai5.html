@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tinhGiaiThua(number) {
+        let giaiThua = number;
+        if (giaiThua === 0 || giaiThua === 1) {
+            return 1;
+        } else {
+            giaiThua = tinhGiaiThua(number - 1);
+            return giaiThua;
+        }
+    }
+
+    let a = tinhGiaiThua(parseInt(prompt("nhap n")));
+    alert(a);
+</script>
+</body>
+</html>

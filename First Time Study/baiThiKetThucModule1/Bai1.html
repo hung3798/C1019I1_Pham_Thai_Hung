@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function inputNum(number) {
+        let arrNumber = new Array(0);
+        if (number < 6) {
+            inputNum(prompt("vui long nhap lai mot so >6"));
+        } else {
+            for (let i = 0; i < number; i++) {
+                arrNumber.push(prompt("nhap gia tri can dien vao mang"), arrNumber[i]);
+                arrNumber.sort(function (a, b) {
+                    return a - b
+                });
+            }
+        }
+        alert("mang chung ta co: " + arrNumber);
+        arrNumber.sort(function (a, b) {
+            return b - a;
+        });
+        alert(arrNumber)
+    }
+
+    inputNum(parseInt(prompt("nhap mot so >6:")));
+
+</script>
+</body>
+</html>

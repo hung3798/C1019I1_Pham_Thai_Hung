@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Circle = function (radius) {
+        this.radius = radius;
+        this.getradius = function () {
+            return this.radius;
+        };
+        this.getArea = function () {
+            return Math.PI * radius * radius;
+        }
+    };
+    let circle = new Circle(5);
+    let radius = circle.getradius();
+    let area = circle.getArea();
+    alert("duong tron co ban kinh: "+radius+"\n"+"dien tich la: " + area)
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkString(string) {
+        let nameStandar = "";
+        string = string.trim().toLocaleLowerCase();
+        for (let i=0;i<string.length;i++) {
+            if (string.charAt(i)===" " && string.charAt(i+1)===" ") {
+                continue;
+            }
+            if (i===0 || string.charAt(i-1)===" ") {
+                nameStandar += string.charAt(i).toLocaleUpperCase();
+                continue;
+            }
+            nameStandar +=string.charAt(i);
+        }
+        string = nameStandar;
+        document.write(string);
+    }
+    checkString(prompt("nhap mot ten bat ki: "))
+</script>
+</body>
+</html>

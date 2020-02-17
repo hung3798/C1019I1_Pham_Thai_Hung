@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var result = "";
+
+    function kiemTraSnt(number) {
+        var dem = 0;
+        if (number >= 2) {
+            for (let i = 1; i <= number; i++) {
+                if (number % i === 0) {
+                    dem++;
+                }
+            }
+            if (dem === 2) {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    function lietKeSnt(number) {
+        for (var i = 2; i <= number; i++) {
+            if (kiemTraSnt(i)) {
+                result += i + "\n";
+            }
+        }
+    }
+
+    var soluong = prompt("nhap so luong: ");
+    lietKeSnt(soluong * 1);
+    document.writeln(result);
+</script>
+</body>
+</html>

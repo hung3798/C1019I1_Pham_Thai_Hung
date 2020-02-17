@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Customer = function () {
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getName = function () {
+            return this.name;
+        };
+        this.setAccount = function (account) {
+            this.account = account;
+        };
+        this.getAccount = function () {
+            return this.account;
+        };
+        this.setPassword = function (password) {
+            this.password = password;
+        };
+        this.getPassword = function () {
+            return this.password;
+        };
+        this.setAddress = function (address) {
+            this.address = address;
+        };
+        this.getAddress = function () {
+            return this.address;
+        };
+    };
+    function mainMenu() {
+        let chosse = prompt("1. Register\n" +
+            "2. Login\n" +
+            "3. Exit");
+        switch (chosse) {
+            case "1":
+                register();
+                break;
+            case "2":
+                login();
+                break;
+            case "3":
+                break;
+            default:
+                mainMenu();
+        }
+    }
+    let customer = new Customer();
+    function register() {
+        customer.setName(prompt("Enter name customer:"));
+        customer.setAddress(prompt("Enter address customer"));
+        customer.setAccount(prompt("Enter account"));
+        customer.setPassword(prompt("Enter password"));
+        mainMenu();
+    }
+    function login() {
+        let id = prompt("User name:");
+        let pass = prompt("Password:");
+        if (id === customer.getAccount() && pass === customer.getPassword()) {
+            user();
+        } else {
+            alert("Account or password was not used!!");
+            mainMenu();
+        }
+    }
+    function user() {
+        let chosse = prompt("1. Show Information\n" +
+            "2. Logout\n" +
+            "3. Exit");
+        switch (chosse) {
+            case "1":
+                alert("Information in your account:" +
+                    "\nName: " + customer.getName() +
+                    "\nAddress: " + customer.getAddress());
+                mainMenu();
+                break;
+            case "2":
+                mainMenu();
+                break;
+            case "3":
+                break;
+            default:
+                user();
+        }
+    }
+    mainMenu();
+</script>
+</body>
+</html>

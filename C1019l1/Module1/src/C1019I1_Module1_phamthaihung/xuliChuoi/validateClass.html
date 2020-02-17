@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function valiDateNameClass() {
+        let regex = /^[CAP]\d{4}[GHIKLM]$/;
+        let str = prompt("Enter Class Name: ");
+        if (regex.test(str)) {
+            alert("Class Name is: " + str);
+        } else {
+            alert("This Name Not Fault!!");
+            valiDateNameClass();
+        }
+    }
+    valiDateNameClass();
+</script>
+</body>
+</html>

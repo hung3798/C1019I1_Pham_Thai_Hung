@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../trananhtuan/C1019I_PhamThaiHung/CaseStudy/part6/task1/addNewCustomer.js"></script>
+</head>
+<body>
+<script>
+    function checkPhone(number) {
+        let numberPhone = prompt("enter: ");
+        let regexPhone = /^0[0-9]{9}$/;
+        regexPhone.test(numberPhone);
+
+        if (checkPhone()) {
+            alert("sdt dung");
+        } else {
+            alert("sodienthoai sai");
+        }
+    }
+    checkPhone()
+</script>
+</body>
+</html>

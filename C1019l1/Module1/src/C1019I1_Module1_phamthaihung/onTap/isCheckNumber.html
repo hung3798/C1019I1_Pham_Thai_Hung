@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function isCheckNumber(number) {
+    //     if (number > 100000 && number < 999999) {
+    //         let first = parseInt(number / 1000);
+    //         let last = number % 1000;
+    //         let st6 = last % 10;
+    //         let first2 = parseInt(last / 10);
+    //         let st5 = first2 % 10;
+    //         let st4 = parseInt(first2 / 10);
+    //         let st3 = first % 10;
+    //         let first3 = parseInt(first / 10);
+    //         let st2 = first3 % 10;
+    //         let st1 = parseInt(first3 / 10);
+    //         if (st1 * st2 * st3 === st4 + st5 + st6) {
+    //             return true;
+    //         } else {
+    //             return false;
+    //         }
+    //     } else {
+    //         isCheckNumber(prompt("Input number:"));
+    //     }
+    // }
+    //
+    // alert(isCheckNumber(parseInt(prompt("nhap so co 6 chu so"))));
+    var m = prompt("nhap so: ");
+    var sum = parseInt(m/1000);
+    var num = m % 1000;
+    var tich =1;tong = 0;
+    do {
+        tong += sum % 10;
+        sum = parseInt(sum / 10);
+        tich *= num%10;
+        num = parseInt(num/10);
+    }while (sum !== 0);
+    console.log(tong);
+    console.log(tich);
+</script>
+</body>
+</html>

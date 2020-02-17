@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemTraGiaTriNhoNhat(arr) {
+        let min = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
+
+    }
+
+    let arr1 = [23, 123, 353, 13, 241, 234, 2134, 2, 3, 425675, 6432];
+    let giatrinhonhat= kiemTraGiaTriNhoNhat(arr1);
+    alert(giatrinhonhat);
+</script>
+</body>
+</html>

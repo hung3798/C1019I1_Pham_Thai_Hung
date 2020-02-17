@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrListCustomer = [];
+    function displayMainMenu() {
+        let chosse = prompt("Select item\n1. Add new Customer\n2. Display information customer\n3. Edit infomation customer\n4. Delete customer\n5. Exit");
+        switch (chosse) {
+            case"1":
+                addNewCustomer();
+            case"2":
+                displayInformation();
+            case"3":
+                editInfomation();
+            case"4":
+                deleteCustomer();
+            case"5":
+            default:
+                displayMainMenu();
+        }
+    }
+    function addNewCustomer() {
+        let arrInfo = [];
+        let nameCustomer = prompt("Input Name Customer:");
+        let idCard = prompt("Input idcard Customer:");
+        let birthdayCustomer = prompt("Input birthday customer:");
+        let emailCustomer = prompt("Input email Customer");
+        let typeCustomer = prompt("Input Type Customer:");
+        let adressCustomer = prompt("Input adress customer:");
+        let rentDay = prompt("Input rent day:");
+        let typeRoom = prompt("Input Type Room:");
+        arrInfo.push(nameCustomer);
+        arrInfo.push(idCard);
+        arrInfo.push(birthdayCustomer);
+        arrInfo.push(emailCustomer);
+        arrInfo.push(typeRoom);
+        arrInfo.push(typeCustomer);
+        arrInfo.push(adressCustomer);
+        arrInfo.push(rentDay);
+        arrListCustomer.push(arrInfo);
+    }
+
+    function displayInformation() {
+        let chosse = prompt("chon khach hang ban muon hien thị:\n"+ "1. ")
+    }
+
+
+    displayMainMenu();
+</script>
+</body>
+</html>

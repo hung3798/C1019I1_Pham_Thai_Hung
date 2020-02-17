@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //để sinh ra một cái bảng thì cấu hình dòng trước cột sau, dòng dùng thẻ "<tr>",cột dùng thẻ "<td"
+    let bang = "<table border='1px'>";
+    for (let dong = 1; dong <= 9; dong++) {
+        bang += "<tr>";
+        for (let cot = 2; cot <= 9; cot++) {
+            let pheptinh = cot + "x" + dong + "=" + (dong * cot);
+            bang += "<td>" + pheptinh + "</td>";
+        }
+        bang+="</tr>";
+    }
+    bang+="</table>";
+    document.write(bang);
+</script>
+</body>
+</html>

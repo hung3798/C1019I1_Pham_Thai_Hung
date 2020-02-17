@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemtraSnt(inputNum){
+        if (inputNum < 2) {
+            return false;
+        } else {
+            for (let i = 2; i < inputNum; i++) {
+                if (inputNum % i === 0) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        }
+    }
+
+    function lietKeSnt(number) {
+        let count = 0;
+        let f = 0;
+        while (count < number) {
+            if (kiemtraSnt(f)) {
+                document.write(f + " ");
+                count++;
+            }
+            f++;
+        }
+
+    }
+    lietKeSnt(prompt("nhap mot so: "));
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let bang = "<table border='1px'>";
+    let temp = 1;
+    for (let dong = 1; dong < 4; dong++) {
+        temp ++;
+        bang += "<tr>";
+        for (cot = 1; cot < 4; cot++) {
+            bang += "<td>" + temp + "</td>";
+        }
+        bang += "</tr>";
+    }
+    bang += "</table>";
+    document.write(bang)
+</script>
+</body>
+</html>

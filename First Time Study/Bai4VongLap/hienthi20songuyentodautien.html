@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputNum;
+    let flag = true;
+    do {
+        inputNum = prompt("Nhap mot so bat ki: ");
+        if (!isNaN(inputNum)) {
+            break;
+        } else {
+            alert("vui long nhap lai mot so nguyen duong")
+        }
+    }while (isNaN(inputNum));
+    function xetSNT(inputNum) {
+        if (inputNum < 2) {
+            flag = false;
+        }
+        else {
+            for (let i = 2; i < inputNum; i++) {
+                if (inputNum % i === 0) {
+                    flag = false;
+                }
+            }
+        }
+        if (flag===true) {
+            document.write(inputNum + " la SNT");
+        }else {
+            document.write(inputNum + " khong la SNT");
+        }
+
+    };
+    xetSNT(inputNum);
+
+</script>
+</body>
+</html>

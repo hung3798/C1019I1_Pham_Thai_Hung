@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="addNewEmployer.js"></script>
+<script src="deletedEmployer.js"></script>
+<script src="displayInfomations.js"></script>
+<script src="editEmployer.js"></script>
+<script src="employer.js"></script>
+<script>
+    function displayMainMenu() {
+        let choose = prompt("1. Add New Employer. \n" +
+            "2. Deleted Employer. \n" +
+            "3. Display Information All Customer \n" +
+            "4. Edit Information Customer" +
+            "5. Exit.");
+    switch (choose) {
+        case "1":
+            addNewEmployer();
+            break;
+        case "2":
+            deletedEmployer();
+            break;
+        case "3":
+            displayInfomation();
+            break;
+        case "4":
+            editInformationEmployer();
+            break;
+        case "5":
+            break;
+    }
+    }
+</script>
+</body>
+</html>
